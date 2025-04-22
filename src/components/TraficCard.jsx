@@ -1,4 +1,5 @@
 import React from 'react';
+import BackgroundColor from './BackgroundColor';
 
 // Funktion för att formatera Microsoft JSON-datum: /Date(timestamp+offset)/
 const formatDateTime = (dateString) => {
@@ -25,20 +26,20 @@ const formatDateTime = (dateString) => {
     });
   };
 
+
 const TraficCard = ({ title, id, description, location, category, priority, createddate }) => {
   return (
-    <div className={`card ${id}`}>
-        <h1>{title}</h1>
+    <BackgroundColor priority={priority}>
       <div className="card-content">
+        <h1>{title}</h1>
         <p className="card-description">{description}</p>
-          <h3 className="card-location">{location}</h3>
-          <h3 className="card-category">{category}</h3>
+        <h3 className="card-location">{location}</h3>
+        <h3 className="card-category">{category}</h3>
         <div className="card-footer">
-          <p className="card-priority">{priority}</p>
           <p className="date-time">{formatDateTime(createddate)}</p>
         </div>
       </div>
-    </div>
+    </BackgroundColor>
   );
 };
 

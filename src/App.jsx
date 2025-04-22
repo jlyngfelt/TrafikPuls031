@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import './styles/styles.css'
 import TraficCard from './components/TraficCard.jsx'
+import BackgroundColor from './components/BackgroundColor.jsx'
 import TraficCardList from './components/TraficCardList.jsx'
 import InfoBox from './components/InfoBox.jsx'
 
@@ -52,29 +53,22 @@ function App() {
       {/* Visa trafikdata med färgkodning baserat på prioritet */}
       <TraficCardList heading="TrafikPuls031">
         {data.map(card => (
-          <TraficCard
-            key={card.id}
-            description={card.description}
-            title={card.title}
-            location={card.exactlocation}
-            category={card.subcategory}
+          <BackgroundColor 
+            key={card.id} 
             priority={card.priority}
-            createddate={card.createddate}
-          />
+          >
+            <TraficCard
+              id={card.id}
+              description={card.description}
+              title={card.title}
+              location={card.exactlocation}
+              category={card.subcategory}
+              priority={card.priority}
+              createddate={card.createddate}
+            />
+          </BackgroundColor>
         ))}
       </TraficCardList>
-
-      {/* För demonstration: Visa alla färger i en rad */}
-      <div style={{ marginTop: '40px' }}>
-        <h3>Färgdemo:</h3>
-        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-          <div style={{ backgroundColor: "var(--prio-1)", width: "100px", height: "100px", borderRadius: "8px", boxShadow: "0 2px 4px rgba(0,0,0,0.1)" }}></div>
-          <div style={{ backgroundColor: "var(--prio-2)", width: "100px", height: "100px", borderRadius: "8px", boxShadow: "0 2px 4px rgba(0,0,0,0.1)" }}></div>
-          <div style={{ backgroundColor: "var(--prio-3)", width: "100px", height: "100px", borderRadius: "8px", boxShadow: "0 2px 4px rgba(0,0,0,0.1)" }}></div>
-          <div style={{ backgroundColor: "var(--prio-4)", width: "100px", height: "100px", borderRadius: "8px", boxShadow: "0 2px 4px rgba(0,0,0,0.1)" }}></div>
-          <div style={{ backgroundColor: "var(--prio-5)", width: "100px", height: "100px", borderRadius: "8px", boxShadow: "0 2px 4px rgba(0,0,0,0.1)" }}></div>
-        </div>
-      </div>
     </div>
   );
 }

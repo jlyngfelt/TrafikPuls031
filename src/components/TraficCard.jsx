@@ -1,22 +1,21 @@
 import React from 'react';
-import BackgroundColor from './BackgroundColor';
 
-// Funktion för att formatera Microsoft JSON-datum: /Date(timestamp+offset)/
+
 const formatDateTime = (dateString) => {
     if (!dateString) return '';
     
-    // Extraherar timestamp från Microsoft JSON-datum
+    
     const matches = dateString.match(/\/Date\((\d+)([+-]\d{4})?\)\//);
     if (!matches) return 'Ogiltigt datum';
     
-    // Konvertera timestamp (millisekunder) till Date-objekt
+    
     const timestamp = parseInt(matches[1], 10);
     const date = new Date(timestamp);
     
-    // Kontrollera om datumet är giltigt
+    
     if (isNaN(date.getTime())) return 'Ogiltigt datum';
     
-    // Formatera till svenska datum
+  
     return date.toLocaleDateString('sv-SE', {
       year: 'numeric',
       month: 'short',
@@ -24,22 +23,44 @@ const formatDateTime = (dateString) => {
       hour: '2-digit',
       minute: '2-digit'
     });
-  };
-
+};
 
 const TraficCard = ({ title, id, description, location, category, priority, createddate }) => {
+  
+  const getPriorityText = (priority) => {
+    const texts = {
+      1: 'Mycket allvarlig händelse',
+      2: 'Stor händelse',
+      3: 'Störning',
+      4: 'Information',
+      5: 'Mindre störning'
+    };
+    
+    return texts[priority] || 'Okänd prioritet';
+  };
+
+  const cardStyle = {
+    padding: '20px',
+    color: priority <= 2 ? '#fff' : '#000',
+  };
+
   return (
-    <BackgroundColor priority={priority}>
+    <div style={cardStyle} className={`card ${id}`}>
       <div className="card-content">
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         <p className="card-description">{description}</p>
-        <h3 className="card-location">{location}</h3>
-        <h3 className="card-category">{category}</h3>
-        <div className="card-footer">
-          <p className="date-time">{formatDateTime(createddate)}</p>
+        <h3 className="card-location">📍 {location}</h3>
+        <h3 className="card-category">🏷️ {category}</h3>
+        <div className="card-footer" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '15px', alignItems: 'center' }}>
+          <p className="card-priority" style={{ fontWeight: '600', fontSize: '14px' }}>
+            🚨 Prioritet {priority}: {getPriorityText(priority)}
+          </p>
+          <p className="date-time" style={{ fontSize: '14px', opacity: '0.9' }}>
+            🕒 {formatDateTime(createddate)}
+          </p>
         </div>
       </div>
-    </BackgroundColor>
+    </div>
   );
 };
 

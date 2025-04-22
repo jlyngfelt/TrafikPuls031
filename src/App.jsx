@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import './styles/styles.css'
 import TraficCard from './components/TraficCard.jsx'
 import TraficCardList from './components/TraficCardList.jsx'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -50,17 +52,24 @@ console.table(data)
 
   return (
     <div className="app">
-    <TraficCardList title="TrafikPuls031">
+    {/* <TraficCardList title="TrafikPuls031">
       {data.map(card => (
         <TraficCard
           key={card.id}
           description={card.description}
           title={card.title}
           location={card.exactlocation}
+          category={card.subcategory}
+          priority={card.priority}
           createddate={card.createddate}
         />
       ))}
-    </TraficCardList>
+    </TraficCardList> */}
+   <div style={{ backgroundColor: "var(--prio-1)", width: "100px", height: "100px" }}></div>
+   <div style={{ backgroundColor: "var(--prio-2)", width: "100px", height: "100px" }}></div>
+   <div style={{ backgroundColor: "var(--prio-3)", width: "100px", height: "100px" }}></div>
+   <div style={{ backgroundColor: "var(--prio-4)", width: "100px", height: "100px" }}></div>
+   <div style={{ backgroundColor: "var(--prio-5)", width: "100px", height: "100px" }}></div>
   </div>
 );
 };

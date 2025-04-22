@@ -1,0 +1,11 @@
+:root {
+    --prio-1: #cf8943;
+    --prio-2: #7c844e;
+    --prio-3: #4E8482;
+    --prio-4: #4e5f84;
+    --prio-5: #844e7d;
+}
+
+/* Vi skulle kunna redogöra för färgerna i en snygg tabell och använda de som bakgrund på de olika lådorna? 
+Har lagt priority som en prop och hittat färger som förslag.
+priority - Meddelandets prioritet (1 = Mycket allvarlig händelse, 2 = Stor händelse, 3 = Störning, 4 = Information, 5 = Mindre störning) */

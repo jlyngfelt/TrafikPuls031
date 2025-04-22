@@ -34,6 +34,8 @@ function App() {
     fetchData()
   }, [])
 
+console.table(data)
+
   if (loading) {
     return <div className="app">Laddar trafikdata...</div>;
   }
@@ -53,7 +55,9 @@ function App() {
         <TraficCard
           key={card.id}
           description={card.description}
-          location={card.location}
+          title={card.title}
+          location={card.exactlocation}
+          createddate={card.createddate}
         />
       ))}
     </TraficCardList>

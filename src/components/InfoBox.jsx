@@ -30,13 +30,20 @@ const InfoBox = () => {
     padding: '12px 15px',
     textAlign: 'left',
     fontSize: '14px',
-    fontWeight: '600'
+    fontWeight: '600',
+    width: '33.33%'
   };
 
   const tdStyle = {
     padding: '12px 15px',
     borderBottom: '1px solid #ddd',
-    verticalAlign: 'middle'
+    verticalAlign: 'middle',
+    textAlign: 'left'
+  };
+
+  const tdCenterStyle = {
+    ...tdStyle,
+    textAlign: 'center'
   };
 
   const colorBoxStyle = (color) => ({
@@ -45,13 +52,16 @@ const InfoBox = () => {
     backgroundColor: color,
     borderRadius: '4px',
     boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
-    display: 'inline-block'
+    display: 'inline-block',
+    margin: 'auto' 
   });
 
   const levelStyle = {
     fontWeight: '600',
     fontSize: '16px',
-    color: '#333'
+    color: '#333',
+    textAlign: 'center',
+    display: 'block'
   };
 
   const descriptionStyle = {
@@ -70,18 +80,18 @@ const InfoBox = () => {
       <table style={tableStyle}>
         <thead>
           <tr>
-            <th style={thStyle}>Nivå</th>
-            <th style={thStyle}>Färg</th>
-            <th style={thStyle}>Beskrivning</th>
+            <th style={{...thStyle, width: '15%', textAlign: 'center'}}>Nivå</th>
+            <th style={{...thStyle, width: '15%', textAlign: 'center'}}>Färg</th>
+            <th style={{...thStyle, width: '70%'}}>Beskrivning</th>
           </tr>
         </thead>
         <tbody>
           {priorities.map((priority) => (
             <tr key={priority.level}>
-              <td style={tdStyle}>
+              <td style={tdCenterStyle}>
                 <span style={levelStyle}>{priority.level}</span>
               </td>
-              <td style={tdStyle}>
+              <td style={tdCenterStyle}>
                 <div style={colorBoxStyle(priority.color)} />
               </td>
               <td style={tdStyle}>

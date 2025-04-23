@@ -44,12 +44,14 @@ const TraficCard = ({ title, id, description, location, category, priority, crea
     color: priority <= 2 ? '#fff' : '#000',
   };
 
+ 
+
   return (
     <div style={cardStyle} className={`card ${id}`}>
       <div className="card-content">
         <h2>{title}</h2>
         <p className="card-description">{description}</p>
-        <h3 className="card-location">📍 {location}</h3>
+        <h3 className="card-location">{location && `📍 ${location}`}</h3>
         <h3 className="card-category">🏷️ {category}</h3>
         <div className="card-footer" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '15px', alignItems: 'center' }}>
           <p className="card-priority" style={{ fontWeight: '600', fontSize: '14px' }}>

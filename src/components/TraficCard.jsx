@@ -41,7 +41,7 @@ const TraficCard = ({ title, id, description, location, category, priority, crea
 
   const cardStyle = {
     padding: '20px',
-    color: priority <= 2 ? '#fff' : '#000',
+    color: '#000',
   };
 
  

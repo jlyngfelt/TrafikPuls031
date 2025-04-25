@@ -1,0 +1,46 @@
+.site-header {
+    background-color: transparent;
+    padding: 20px 20px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo-container {
+    margin-right: 20px;
+  }
+  
+  .traffic-icon {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .title-container h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  @media (max-width: 600px) {
+    .header-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .logo-container {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    
+    .traffic-icon {
+      height: 80px; /* Lite mindre på mobil */
+      width: 80px;
+    }
+  }

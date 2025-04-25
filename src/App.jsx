@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import "./styles/styles.css";
+import "./styles/header.css"; // Importera header-stilarna
+import Header from "./components/Header.jsx"; // Importera Header-komponenten
 import TraficCard from "./components/TraficCard.jsx";
 import BackgroundColor from "./components/BackgroundColor.jsx";
 import TraficCardList from "./components/TraficCardList.jsx";
@@ -76,38 +78,56 @@ function App() {
   console.log("Filtrerade meddelanden:", filteredMessages);
 
   if (loading) {
-    return <div className="app">Laddar trafikdata från hela regionen...</div>;
+    return (
+      <div className="app">
+        <Header />
+        <div className="loading-container">Laddar trafikdata från hela regionen...</div>
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="app">Fel: {error}</div>;
+    return (
+      <div className="app">
+        <Header />
+        <div className="error-container">Fel: {error}</div>
+      </div>
+    );
   }
 
   if (!filteredMessages || filteredMessages.length === 0) {
-    return <div className="app">Inga trafikmeddelanden för Göteborgsområdet hittades.</div>;
+    return (
+      <div className="app">
+        <Header />
+        <div className="no-data-container">Inga trafikmeddelanden för Göteborgsområdet hittades.</div>
+      </div>
+    );
   }
 
   return (
-    <div className="app" style={{ padding: "20px" }}>
-      {/* Visa förklarande tabell för prioritetsnivåer */}
-      <InfoBox />
+    <div className="app">
+      <Header />
+      <div className="content-container">
+        {/* Visa förklarande tabell för prioritetsnivåer */}
+        <InfoBox />
 
-      {/* Visa trafikdata med färgkodning baserat på prioritet */}
-      <TraficCardList heading="TrafikPuls031">
-        {filteredMessages.map((card) => (
-          <BackgroundColor key={card.id} priority={card.priority}>
-            <TraficCard
-              id={card.id}
-              description={card.description}
-              title={card.title}
-              location={card.exactlocation}
-              category={card.subcategory}
-              priority={card.priority}
-              createddate={card.createddate}
-            />
-          </BackgroundColor>
-        ))}
-      </TraficCardList>
+        {/* Visa trafikdata med färgkodning baserat på prioritet */}
+        <TraficCardList>
+          {filteredMessages.map((card) => (
+            <BackgroundColor key={card.id} priority={card.priority}>
+              <TraficCard
+                id={card.id}
+                description={card.description}
+                title={card.title}
+                location={card.exactlocation}
+                category={card.subcategory}
+                priority={card.priority}
+                createddate={card.createddate}
+              />
+            </BackgroundColor>
+          ))}
+        </TraficCardList>
+      </div>
     </div>
   );
 }

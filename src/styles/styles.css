@@ -6,7 +6,16 @@
     --prio-5: #99668B;
 }
 
-/* Grid-styling */
+/* Trafikgrid container */
+.trafikgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolumner på stora skärmar */
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Grid-styling för korten */
 .grid-card {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     min-height: 280px; /* Minimumhöjd för att göra korten någorlunda lika */
@@ -27,12 +36,20 @@
 }
 
 @media (max-width: 768px) {
+    .trafikgrid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolumner på mellanstora skärmar */
+    }
+    
     .grid-card {
         min-height: 240px;
     }
 }
 
 @media (max-width: 480px) {
+    .trafikgrid {
+        grid-template-columns: 1fr; /* 1 kolumn på små skärmar */
+    }
+    
     .grid-card {
         min-height: 220px;
     }

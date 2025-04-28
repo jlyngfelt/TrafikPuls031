@@ -3,6 +3,7 @@ import "./App.css";
 import "./styles/styles.css";
 import "./styles/header.css"; // Importera header-stilarna
 import "./styles/footer.css"; // Importera footer-stilarna
+import "./styles/grid.css";
 import Header from "./components/Header.jsx"; // Importera Header-komponenten
 import Footer from "./components/Footer.jsx"; // Importera Footer-komponenten
 import TraficCard from "./components/TraficCard.jsx";

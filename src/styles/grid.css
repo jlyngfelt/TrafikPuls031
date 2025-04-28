@@ -1,0 +1,29 @@
+/* Trafikgrid container */
+.trafikgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolumner på stora skärmar */
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* Responsiv anpassning */
+  @media (max-width: 1024px) {
+    .trafikgrid {
+      gap: 12px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .trafikgrid {
+      grid-template-columns: repeat(2, 1fr); /* 2 kolumner på mellanstora skärmar */
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .trafikgrid {
+      grid-template-columns: 1fr; /* 1 kolumn på små skärmar */
+      gap: 10px;
+    }
+  }

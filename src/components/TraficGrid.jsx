@@ -2,7 +2,7 @@ import React from 'react';
 
 const TraficGrid = ({ children }) => {
   return (
-    <div className="trafikgrid">
+    <div className="traficgrid">
       {children}
     </div>
   );

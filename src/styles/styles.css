@@ -1,56 +1,15 @@
-:root {
-    --prio-1: #cf8943;
-    --prio-2: #7c844e;
-    --prio-3: #4E8482;
-    --prio-4: #6276A3;
-    --prio-5: #99668B;
+
+@import 'variables.css';
+@import 'layout.css';
+@import 'grid.css';
+@import 'cards.css';
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-/* Trafikgrid container */
-.trafikgrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 kolumner på stora skärmar */
-    gap: 15px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-/* Grid-styling för korten */
-.grid-card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    min-height: 280px; /* Minimumhöjd för att göra korten någorlunda lika */
-    display: flex;
-    flex-direction: column;
-}
-
-.grid-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-/* Responsiv anpassning */
-@media (max-width: 1024px) {
-    .grid-card {
-        min-height: 260px;
-    }
-}
-
-@media (max-width: 768px) {
-    .trafikgrid {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolumner på mellanstora skärmar */
-    }
-    
-    .grid-card {
-        min-height: 240px;
-    }
-}
-
-@media (max-width: 480px) {
-    .trafikgrid {
-        grid-template-columns: 1fr; /* 1 kolumn på små skärmar */
-    }
-    
-    .grid-card {
-        min-height: 220px;
-    }
-}

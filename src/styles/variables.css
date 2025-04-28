@@ -17,6 +17,10 @@
     /* Skuggor */
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
     --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
+
+       /* Typografi */
+       --font-heading: 'Cal Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
+       --font-body: system-ui, Avenir, Helvetica, Arial, sans-serif;
     
     /* Brytpunkter (för referens) */
     --breakpoint-sm: 480px;

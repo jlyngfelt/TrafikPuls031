@@ -5,44 +5,45 @@
     margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     box-sizing: border-box;
-  }
+}
     
-  .header-container {
+.header-container {
     display: flex;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-  }
+}
     
-  .logo-container {
+.logo-container {
     margin-right: 20px;
-  }
+}
     
-  .traffic-icon {
+.traffic-icon {
     height: 100px;
     width: 100px;
-  }
+}
     
-  .title-container h1 {
+.title-container h1 {
     margin: 0;
-    font-size: 32px;
+    font-family: 'Cal Sans', system-ui, Avenir, Helvetica, Arial, sans-serif; /* Cal Sans för rubriken */
+    font-size: 36px; /* Något större */
     color: #333;
     font-weight: 700;
-  }
+}
     
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
     .header-container {
-      flex-direction: column;
-      text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
-      
+        
     .logo-container {
-      margin-right: 0;
-      margin-bottom: 10px;
+        margin-right: 0;
+        margin-bottom: 10px;
     }
-      
+        
     .traffic-icon {
-      height: 80px;
-      width: 80px;
+        height: 80px;
+        width: 80px;
     }
-  }
+}

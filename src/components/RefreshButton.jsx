@@ -23,7 +23,7 @@ const RefreshButton = ({ onRefresh }) => {
     justifyContent: 'center',
     gap: '8px',
     backgroundColor: '#4E8482', // Using the teal color from your header
-    color: '#ffffff',
+    color: '#000000',
     padding: '10px 16px',
     borderRadius: '6px',
     border: 'none',

@@ -29,7 +29,7 @@ const InfoBox = () => {
     color: 'white',
     padding: '12px 15px',
     textAlign: 'left',
-    fontSize: '14px',
+    fontSize: '15px', // Ökad storlek
     fontWeight: '600',
     width: '33.33%'
   };
@@ -38,7 +38,8 @@ const InfoBox = () => {
     padding: '12px 15px',
     borderBottom: '1px solid #ddd',
     verticalAlign: 'middle',
-    textAlign: 'left'
+    textAlign: 'left',
+    fontWeight: '500' // Ökad tjocklek för bättre läsbarhet
   };
 
   const tdCenterStyle = {
@@ -65,16 +66,31 @@ const InfoBox = () => {
   };
 
   const descriptionStyle = {
+    color: '#444', // Något mörkare för bättre kontrast
+    fontSize: '15px', // Ökad storlek
+    fontWeight: '500' // Ökad tjocklek
+  };
+
+  const titleStyle = {
+    marginTop: 0,
+    marginBottom: '15px',
+    color: '#333',
+    fontFamily: "'Cal Sans', system-ui, Avenir, Helvetica, Arial, sans-serif" // Cal Sans för rubriken
+  };
+
+  const introTextStyle = {
     color: '#555',
-    fontSize: '15px'
+    marginBottom: '20px',
+    fontSize: '16px', // Ökad storlek
+    fontWeight: '500' // Ökad tjocklek
   };
 
   return (
     <div style={legendStyle}>
-      <h2 style={{ marginTop: 0, marginBottom: '15px', color: '#333' }}>
+      <h2 style={titleStyle}>
         Prioritetsnivåer för trafikhändelser
       </h2>
-      <p style={{ color: '#666', marginBottom: '20px' }}>
+      <p style={introTextStyle}>
         Varje trafikhändelse har en prioritetsnivå som indikerar allvarlighetsgraden:
       </p>
       <table style={tableStyle}>

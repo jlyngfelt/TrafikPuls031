@@ -9,6 +9,7 @@ import TraficCard from "./components/TraficCard.jsx";
 import BackgroundColor from "./components/BackgroundColor.jsx";
 import TraficCardList from "./components/TraficCardList.jsx";
 import InfoBox from "./components/InfoBox.jsx";
+import RefreshButton from "./components/RefreshButton.jsx"; // Import RefreshButton component
 
 function App() {
   const [filteredMessages, setFilteredMessages] = useState([]);
@@ -115,6 +116,11 @@ function App() {
       <div className="content-container">
         {/* Visa förklarande tabell för prioritetsnivåer */}
         <InfoBox />
+
+        {/* Lägg till uppdateringsknappen ovanför grid-vyn */}
+        <div className="refresh-button-container">
+          <RefreshButton onRefresh={fetchAllData} />
+        </div>
 
         {/* Visa trafikdata med färgkodning baserat på prioritet */}
         <TraficCardList>

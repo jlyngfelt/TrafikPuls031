@@ -25,7 +25,7 @@
     
 .title-container h1 {
     margin: 0;
-    font-family: 'Cal Sans', system-ui, Avenir, Helvetica, Arial, sans-serif; /* Cal Sans för rubriken */
+    font-family: var(--font-heading);
     font-size: 36px; /* Något större */
     color: #333;
     font-weight: 700;

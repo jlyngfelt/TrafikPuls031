@@ -61,7 +61,7 @@ function App() {
       const gbgMessages = allData
         .filter(isGbgRelated)
         .sort((a, b) => new Date(b.createddate) - new Date(a.createddate))
-        .slice(0, 12);
+        .slice(0, 9);
       
       setFilteredMessages(gbgMessages);
       setError(null);

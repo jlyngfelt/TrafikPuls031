@@ -44,8 +44,6 @@ const TraficCard = ({ title, id, description, location, category, priority, crea
     color: '#000',
   };
 
- 
-
   return (
     <div style={cardStyle} className={`card ${id}`}>
       <div className="card-content">

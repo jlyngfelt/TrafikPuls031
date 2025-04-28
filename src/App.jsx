@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import "./styles/styles.css";
 import "./styles/header.css"; // Importera header-stilarna
+import "./styles/footer.css"; // Importera footer-stilarna
 import Header from "./components/Header.jsx"; // Importera Header-komponenten
+import Footer from "./components/Footer.jsx"; // Importera Footer-komponenten
 import TraficCard from "./components/TraficCard.jsx";
 import BackgroundColor from "./components/BackgroundColor.jsx";
 import TraficCardList from "./components/TraficCardList.jsx";
@@ -82,6 +84,7 @@ function App() {
       <div className="app">
         <Header />
         <div className="loading-container">Laddar trafikdata från hela regionen...</div>
+        <Footer />
       </div>
     );
   }
@@ -91,6 +94,7 @@ function App() {
       <div className="app">
         <Header />
         <div className="error-container">Fel: {error}</div>
+        <Footer />
       </div>
     );
   }
@@ -100,6 +104,7 @@ function App() {
       <div className="app">
         <Header />
         <div className="no-data-container">Inga trafikmeddelanden för Göteborgsområdet hittades.</div>
+        <Footer />
       </div>
     );
   }
@@ -128,6 +133,7 @@ function App() {
           ))}
         </TraficCardList>
       </div>
+      <Footer />
     </div>
   );
 }

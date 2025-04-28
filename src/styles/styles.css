@@ -6,6 +6,34 @@
     --prio-5: #99668B;
 }
 
-/* Vi skulle kunna redogöra för färgerna i en snygg tabell och använda de som bakgrund på de olika lådorna? 
-Har lagt priority som en prop och hittat färger som förslag.
-priority - Meddelandets prioritet (1 = Mycket allvarlig händelse, 2 = Stor händelse, 3 = Störning, 4 = Information, 5 = Mindre störning) */
+/* Grid-styling */
+.grid-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 280px; /* Minimumhöjd för att göra korten någorlunda lika */
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Responsiv anpassning */
+@media (max-width: 1024px) {
+    .grid-card {
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-card {
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-card {
+        min-height: 220px;
+    }
+}

@@ -72,7 +72,7 @@ function App() {
     fetchAllData();
   }, []);
 
-  console.log("Filtrerade meddelanden:", filteredMessages);
+
 
   if (loading) {
     return (

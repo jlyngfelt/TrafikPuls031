@@ -29,7 +29,7 @@ const InfoBox = () => {
     color: 'white',
     padding: '12px 15px',
     textAlign: 'left',
-    fontSize: '15px', // Ökad storlek
+    fontSize: '15px', 
     fontWeight: '600',
     width: '33.33%'
   };
@@ -39,7 +39,7 @@ const InfoBox = () => {
     borderBottom: '1px solid #ddd',
     verticalAlign: 'middle',
     textAlign: 'left',
-    fontWeight: '500' // Ökad tjocklek för bättre läsbarhet
+    fontWeight: '500' 
   };
 
   const tdCenterStyle = {
@@ -66,23 +66,23 @@ const InfoBox = () => {
   };
 
   const descriptionStyle = {
-    color: '#444', // Något mörkare för bättre kontrast
-    fontSize: '15px', // Ökad storlek
-    fontWeight: '500' // Ökad tjocklek
+    color: '#444', 
+    fontSize: '15px', 
+    fontWeight: '500' 
   };
 
   const titleStyle = {
     marginTop: 0,
     marginBottom: '15px',
     color: '#333',
-    fontFamily: "'Cal Sans', system-ui, Avenir, Helvetica, Arial, sans-serif" // Cal Sans för rubriken
+    fontFamily: "'Cal Sans', system-ui, Avenir, Helvetica, Arial, sans-serif" 
   };
 
   const introTextStyle = {
     color: '#555',
     marginBottom: '20px',
-    fontSize: '16px', // Ökad storlek
-    fontWeight: '500' // Ökad tjocklek
+    fontSize: '16px', 
+    fontWeight: '500' 
   };
 
   return (

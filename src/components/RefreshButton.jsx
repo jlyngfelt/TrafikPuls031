@@ -22,7 +22,7 @@ const RefreshButton = ({ onRefresh }) => {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-    backgroundColor: '#4E8482', // Using the teal color from your header
+    backgroundColor: '#9db092',
     color: '#000000',
     padding: '10px 16px',
     borderRadius: '6px',
@@ -35,7 +35,7 @@ const RefreshButton = ({ onRefresh }) => {
   };
 
   const hoverStyle = {
-    backgroundColor: '#5a9997', // Slightly lighter teal when hovering
+    backgroundColor: '#b8ccad', 
     transform: 'translateY(-2px)',
     boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
   };

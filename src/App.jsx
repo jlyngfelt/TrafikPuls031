@@ -1,34 +1,31 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import "./styles/styles.css";
-import "./styles/header.css"; // Importera header-stilarna
-import "./styles/footer.css"; // Importera footer-stilarna
-import Header from "./components/Header.jsx"; // Importera Header-komponenten
-import Footer from "./components/Footer.jsx"; // Importera Footer-komponenten
+import "./styles/header.css"; 
+import "./styles/footer.css"; 
+import Header from "./components/Header.jsx"; 
+import Footer from "./components/Footer.jsx"; 
 import TraficCard from "./components/TraficCard.jsx";
 import BackgroundColor from "./components/BackgroundColor.jsx";
 import TraficCardList from "./components/TraficCardList.jsx";
 import InfoBox from "./components/InfoBox.jsx";
-import RefreshButton from "./components/RefreshButton.jsx"; // Import RefreshButton component
+import RefreshButton from "./components/RefreshButton.jsx"; 
 
 function App() {
   const [filteredMessages, setFilteredMessages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Lista med relevanta sökord för Göteborgsområdet
+
   const gbgKeywords = ["göteborg", "hisingen", "mölndal", "landvetter", "partille", "kungälv", "lerum"];
 
-  // Funktion för att kontrollera om ett meddelande nämner Göteborgsområdet
   const isGbgRelated = (message) => {
-    // Skapa en samlad text från titel, beskrivning och plats
     const combinedText = `${message.title} ${message.description} ${message.exactlocation}`.toLowerCase();
     
-    // Kontrollera om någon av nyckelorden finns i den samlade texten
     return gbgKeywords.some(keyword => combinedText.includes(keyword));
   };
 
-  // Huvudfunktion för att hämta och filtrera data från flera sidor
+ 
   const fetchAllData = async () => {
     try {
       setLoading(true);
@@ -45,20 +42,17 @@ function App() {
         if (json.messages && json.messages.length > 0) {
           allData = [...allData, ...json.messages];
           page++;
-          // Kolla om det finns fler sidor
           hasMore = json.pagination.totalpages > page;
         } else {
           hasMore = false;
         }
-        
-        // Om vi har samlat tillräckligt många meddelanden för Göteborgsområdet, kan vi avbryta
+
         const gbgRelatedMessages = allData.filter(isGbgRelated);
         if (gbgRelatedMessages.length >= 50) {
           break;
         }
       }
       
-      // Filtrera, sortera och begränsa direkt utan mellanlagring
       const gbgMessages = allData
         .filter(isGbgRelated)
         .sort((a, b) => new Date(b.createddate) - new Date(a.createddate))
@@ -114,15 +108,12 @@ function App() {
     <div className="app">
       <Header />
       <div className="content-container">
-        {/* Visa förklarande tabell för prioritetsnivåer */}
         <InfoBox />
 
-        {/* Lägg till uppdateringsknappen ovanför grid-vyn */}
         <div className="refresh-button-container">
           <RefreshButton onRefresh={fetchAllData} />
         </div>
 
-        {/* Visa trafikdata med färgkodning baserat på prioritet */}
         <TraficCardList>
           {filteredMessages.map((card) => (
             <BackgroundColor key={card.id} priority={card.priority}>

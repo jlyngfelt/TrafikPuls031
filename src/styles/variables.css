@@ -1,29 +1,28 @@
-/* Färgvariabler */
-:root {
-    /* Prioritetsfärger */
-    --prio-1: #cf8943;
-    --prio-2: #7c844e;
-    --prio-3: #4E8482;
-    --prio-4: #6276A3;
-    --prio-5: #99668B;
-    
-    /* Layout färger */
-    --bg-light: #f5f7fa;
-    --bg-white: #ffffff;
-    --text-dark: #333333;
-    --text-muted: #666666;
-    --border-light: #dddddd;
-    
-    /* Skuggor */
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
-    --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
 
-       /* Typografi */
-       --font-heading: 'Cal Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
-       --font-body: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    
-    /* Brytpunkter (för referens) */
-    --breakpoint-sm: 480px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 1024px;
+:root {
+
+  --prio-1: #cf8943;
+  --prio-2: #7c844e;
+  --prio-3: #4e8482;
+  --prio-4: #6276a3;
+  --prio-5: #99668b;
+
+
+  --bg-light: #f5f7fa;
+  --bg-white: #ffffff;
+  --text-dark: #000000;
+  --text-muted: #666666;
+  --border-light: #dddddd;
+
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+
+  --font-heading: "Cal Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-body: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
 }

@@ -43,7 +43,7 @@ const TraficCard = ({ title, id, description, location, category, priority, crea
         <h3 className="card-category">🏷️ {category}</h3>
       </div>
       <div className="card-footer">
-        <span className="priority-badge">🚨 P{priority}</span>
+        <span className="priority-badge">🚨 Prio {priority}</span>
         <span className="date-time">🕒 {formatDateTime(createddate)}</span>
       </div>
     </div>
